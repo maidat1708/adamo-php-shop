@@ -1,0 +1,262 @@
+.slideshow-container {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    vertical-align: middle;
+    filter: brightness(80%) contrast(80%);
+    border-radius: 5px;
+}
+
+.text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    background-color: transparent;
+    transform: translateY(-48%) translateX(-50%);
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 15px;
+    color: white;
+    background-color: transparent;
+    margin-top: -22px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.slide-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    background-color: transparent;
+    transform: translateX(-50%);
+}
+
+/* Dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: white;
+}
+
+.button-see-all {
+    position: absolute;
+    cursor: pointer;
+    right: 0%;
+    bottom: 0%;
+    height: 50px;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 5px 0 5px 0;
+    background-color: #0DB14B;
+    outline: none;
+    border: none;
+}
+
+.button-see-all:hover {
+    background-color: #03471d;
+    transition: background-color 0.6s ease;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade-in;
+    animation-duration: 2s;
+    /* Độ dài của animation, bạn có thể điều chỉnh tùy ý */
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0.2;
+        /* Bắt đầu với opacity là 0 để ảnh ẩn đi */
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+        /* Vẫn giữ nguyên opacity là 1 để hiển thị ảnh */
+    }
+}
+
+.dive-text {
+    text-align: center;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+.dive-text b {
+    font-size: 30px;
+}
+
+/* products */
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    width: 80%;
+}
+
+.product-item {
+    position: relative;
+    background-color: #F0F1F3;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.product-item img {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    z-index: 1;
+}
+
+.highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(13, 177, 75, 1);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    /* Ban đầu ẩn */
+    z-index: 2;
+}
+
+.product-item:hover img {
+    opacity: 0.5;
+}
+
+.product-item:hover .highlight {
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+    /* Hiển thị khi hover */
+}
+
+.highlight p {
+    background-color: transparent;
+    width: 80%;
+    font-size: 30px;
+    margin: 0;
+    z-index: 3;
+}
+
+/* Screen 2 */
+.body-screen2{
+    margin-left: 20px;
+}
+.nav-sc2 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-sc2 a {
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.nav-sc2 p {
+    color:#C4C4C4;
+    font-size: 44px;
+    margin-bottom: 4px;
+}
+
+.nav-sc2 a:hover {
+    color:  #0DB14B;
+}
+
+.nav-sc2 a.active {
+    font-weight: bold;
+    color: #0DB14B;
+}
+
+ /* list category */
+ .button-group-category {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-bottom: 1px  solid #f0f0f0;
+  }
+
+  .button-group-category button {
+    padding: 20px 18px;
+    margin: 0 5px;
+    background-color: #F2F4F6;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.button-group-category button:hover {
+    background-color: #0DB14B;
+    color: white;
+  }
+
+.button-group-category button.active {
+    background-color: #0DB14B;
+    font-weight: bold;
+    color: white;
+  }
+
