@@ -28,15 +28,4 @@ class LoginRequest extends FormRequest
             "password" => ["required","string"],
         ];
     }
-
-    protected function failedValidation(Validator $validator)
-    {
-        $errors = $validator->errors();
-
-        throw new HttpResponseException(response()->json([
-            'success' => false,
-            'message' => 'Validation errors',
-            'errors' => $errors
-        ], 422));
-    }
 }

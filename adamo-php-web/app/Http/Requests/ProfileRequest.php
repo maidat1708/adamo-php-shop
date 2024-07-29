@@ -2,13 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\CustomNameRule;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Validation\Rule;
 
-class RegisterRequest extends FormRequest
+class ProfileRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +22,7 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ['required',new CustomNameRule() , Rule::unique('users','name')],
-            "email" => ["required", Rule::unique("users","email")],
-            "password"=> ["required","confirmed"],
+            //
         ];
     }
 }

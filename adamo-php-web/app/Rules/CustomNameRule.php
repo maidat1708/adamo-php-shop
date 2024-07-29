@@ -16,7 +16,7 @@ class CustomNameRule implements ValidationRule
     {
         //
 
-        if (!is_string($value) || !preg_match('/^[A-Z][a-zA-Z0-9]*$/', $value)) {
+        if (!is_string($value) || !preg_match('/^([a-zA-Z0-9]* *)*$/', $value)) {
             // $fail("The $attribute must be a single capitalized word"); // cach 1
             $fail('The :attribute must be a single capitalized word'); // cach 2
         }

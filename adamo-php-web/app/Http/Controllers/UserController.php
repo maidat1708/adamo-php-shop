@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -38,13 +39,9 @@ class UserController extends Controller
         return redirect('/');
     }
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        $field = $request->validate([
-            "name" => ['required', Rule::unique('users', 'name')],
-            "email" => ["required", Rule::unique("users", "email")],
-            "password" => ["required", "confirmed"],
-        ]);
+        $field = $request->validated();
         $field['password'] = bcrypt($request->password);
         $addUser = $this->service->addUser($field);
         auth()->login($addUser);
