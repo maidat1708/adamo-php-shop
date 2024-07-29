@@ -55,7 +55,9 @@
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
-                                    <a href="{{ route('showforgotPassword') }}">Forgot Password</a>
+                                    <a
+                                    {{-- href="{{ route('showforgotPassword') }}" --}}
+                                    >Forgot Password</a>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Repositories;
+namespace App\Repositories;
 use App\Models\User;
 use Illuminate\Support\Facades\Request;
 
@@ -12,5 +12,8 @@ class UserRepository{
 
     public function login(Request $request){
 
+    }
+    public function addUser(Array $user){
+        return $this->user->addUser($user);
     }
 }

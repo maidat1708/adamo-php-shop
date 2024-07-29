@@ -42,20 +42,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="age" type="number" class="form-control @error('age') is-invalid @enderror" name="age" required autocomplete="age">
-
-                                @error('age')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

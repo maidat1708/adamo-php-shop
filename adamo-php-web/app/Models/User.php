@@ -51,4 +51,7 @@ class User extends Authenticatable
     public function addresses(){
         return $this->hasManyThrough(Address::class,Profile::class);
     }
+    public function addUser(Array $user){
+        return $this->create($user);
+    }
 }
