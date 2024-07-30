@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+
+    private ProductService $service;
+
+    public function __construct(ProductService $service) {
+        $this->service = $service;
+    }
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         //
+        $products = $this->service->getProducts();
+        dd($products);
         return view("products.index");
     }
 
@@ -29,6 +40,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**

@@ -1,23 +1,23 @@
-<header class="header">
-    <div class="header-item-1">
-        <div class="logo">
-            <img src="{{asset('images/logo.png') }}" alt="Logo">
-        </div>
-        <div class="nav-wrapper">
-            <ul class="nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Write a Review</a></li>
-                <li><a href="#write">About us</a></li>
-                <li><a href="#blog">Blog</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="header-item-2">
-        <div class="search-box">
-            <input type="text" placeholder="Search by model # or keywords">
-            <button type="submit" class="search-button">
-                <img src="images/icon_search.png" alt="Icon search" class="search-img">
+<header class="header_section">
+    <div class="container-fluid">
+        <div class="" id="">
+          <div class="custom_menu-btn">
+            <button onclick="openNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
             </button>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="service.html">Service</a>
+                <a href="blog.html">Blog</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </nav>
     </div>
-</header>
+  </header>

@@ -26,15 +26,15 @@ class UserController extends Controller
 
     public function login(Request $request){
         if(Auth::check()){
-
+            return view("welcome");
         }
         $field = $request->validate([
-            "email" => ['required'],
+            "phoneNumber" => ['required'],
             "password" => ["required"],
         ]);
-        if (Auth::attempt(["email" => $field['email'], "password" => $field['password']])) {
+        if (Auth::attempt(["phone_number" => $field['phoneNumber'], "password" => $field['password']])) {
             $request->session()->regenerate();
-            return to_route("products");
+            return ;
         }
         return redirect('/');
     }
@@ -45,7 +45,7 @@ class UserController extends Controller
         $field['password'] = bcrypt($request->password);
         $addUser = $this->service->addUser($field);
         auth()->login($addUser);
-        return view("products.index");
+        return view("welcome");
     }
 
     public function showRegister()

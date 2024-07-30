@@ -30,4 +30,8 @@ class Product extends Model
     public function orders(){
         return $this->belongsToMany(Order::class,"OderItems","product_id","order_id");
     }
+
+    public function getProducts(){
+        return $this->with('productAttributes')->get();
+    }
 }
